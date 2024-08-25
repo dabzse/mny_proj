@@ -1,0 +1,80 @@
+<style>
+
+    #packages .wp-block-column {
+        background: #fff;
+        border: 1px solid #CED2D9;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0.5rem 0.5rem 0 0.5rem;
+        max-width: 355px;
+        {% comment %} padding-bottom: 7%; {% endcomment %}
+        padding: 1rem;
+        position: relative;
+        transition: all .2s ease-in-out;
+    }
+
+    @media (min-width: 782px) {
+        .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+            flex-basis: 0;
+            flex-grow: 1;
+        }
+    }
+
+    .wp-block-column {
+        {% comment %} flex-grow: 1; {% endcomment %}
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    * {
+        outline: 0 !important;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #0a1116;
+        text-align: left;
+        background-color: #fff;
+    }
+
+</style>
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <div class="wp-block-group">
+        <div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+            <figure class="wp-block-image size-large">
+                <img
+                    loading="lazy"
+                    decoding="async"
+                    width="40"
+                    height="35"
+                    src="https://www.anaconda.com/wp-content/uploads/2023/03/AI-machine.svg"
+                    alt="AI Machine learning icon"
+                    class="wp-image-10006"
+                >
+            </figure>
+
+            <h5 class="wp-block-heading has-dark-gunmetal-color has-text-color">AI and Machine Learning</h5>
+        </div>
+    </div>
+
+    <ul class="wp-block-list">
+        <li>scikit-learn</li>
+        <li>TensorFlow</li>
+        <li>Keras</li>
+        <li>PyTorch</li>
+        <li>XGBoost</li>
+    </ul>
+</div>

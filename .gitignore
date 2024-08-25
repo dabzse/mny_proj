@@ -1,0 +1,8 @@
+__pycache__
+Pipfile*
+.env
+.vercel
+.secrets
+settings_dev.py
+._DATA
+.vscode

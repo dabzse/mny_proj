@@ -1,0 +1,117 @@
+{% extends "devel/main.html" %}
+{% load static %}
+{% load custom_tags %}
+
+{% block cert_css %}
+    <link href="{% static 'css/cert.css' %}" rel="stylesheet" type="text/css">
+{% endblock cert_css %}
+
+
+{% block whoami %}
+    {% include 'devel/inc.whoami.html' %}
+{% endblock whoami %}
+
+{% block content %}
+
+<div id="cert" class="cert-container bg-gradient-to-r from-blue-100 to-blue-400">
+    <article>
+        <h2 class="py-4 text-center text-blue-800 hover:text-red-500">
+            Some "certifications" I have earned in the learning apps.<br>
+            These don’t approves my knowledge, but it means:<br>
+            I’m not stupid for coding!<br>
+            Just need a more practice, for practice I need more time...
+        </h2>
+    </article>
+    <nav class="nav nav-pills flex-column flex-sm-row bg-primary">
+        <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if not filter_by or filter_by == 'all' %}active{% endif %}"
+           href="{% url 'cert_all' %}">All: {{ all_count }}</a>
+        <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'sl' %}active{% endif %}"
+           href="{% url 'cert_filter' 'sl' %}">SoloLearn: {{ sl_count }}</a>
+        <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'gh' %}active{% endif %}"
+           href="{% url 'cert_filter' 'gh' %}">GrassHopper: {{ gh_count }}</a>
+        <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'ud' %}active{% endif %}"
+           href="{% url 'cert_filter' 'ud' %}">UDemy: {{ ud_count }}</a>
+    </nav>
+
+    {% if not filter_by or filter_by == 'all' %}
+        {% for place, certifications in certifications_by_place.items %}
+        <h3>{{ place }} Certifications</h3>
+        <div class="row">
+            {% for cert in certifications %}
+                <div class="column {{ cert.classname }}">
+                    <div class="content">
+                        <img src="{{ cert.image.url }}" alt="{{ cert.description }}" class="border border-4 border-primary rounded" data-bs-toggle="modal" data-bs-target="#image_modal_all{{ cert.id }}">
+                    </div>
+                    <p class="text-lg text-gray-700 font-bold text-center">{{ cert.description }}</p>
+                </div>
+
+                <!-- Modal for Each Certification -->
+                <div class="modal fade" id="image_modal_all{{ cert.id }}" tabindex="-1" aria-labelledby="image_modal_all_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="image_modal_all_label">{{ cert.description }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img src="{{ cert.image.url }}" alt="{{ cert.description }}" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <hr>
+        {% endfor %}
+
+        {% else %}
+            <h3>{{ learn_places|get_place_name:filter_by }} Certifications</h3>
+            {% if filter_by != 'gh' %}
+            <div id="filter_content" class="btn-group" role="group">
+                <button type="button" class="btn btn-primary me-2 active" onclick="filter_selection('all')">All</button>
+                {% if filter_by == 'sl' %}
+                    {% for key, label in sl_tags.items %}
+                        <button type="button" class="btn btn-secondary me-2" onclick="filter_selection('{{ key }}')">{{ label }}</button>
+                    {% endfor %}
+                {% elif filter_by == 'ud' %}
+                    {% for key, label in ud_tags.items %}
+                        <button type="button" class="btn btn-secondary me-2" onclick="filter_selection('{{ key }}')">{{ label }}</button>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div class="row">
+                {% for cert in certifications %}
+                    <div class="column {{ cert.classname }}">
+                        <div class="content">
+                            <img src="{{ cert.image.url }}" alt="{{ cert.description }}" class="border border-4 border-primary rounded" data-bs-toggle="modal" data-bs-target="#cert_modal{{ forloop.counter }}">
+                        </div>
+                        <p class="text-lg text-gray-700 font-bold text-center">{{ cert.description }}</p>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="cert_modal{{ forloop.counter }}" tabindex="-1" aria-labelledby="cert_modal_label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">  <!-- Add modal-lg for a larger modal -->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cert_modal_label">{{ cert.description }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center"> <!-- Center the image horizontally -->
+                                    <img src="{{ cert.image.url }}" alt="{{ cert.description }}" class="img-fluid"> <!-- Use img-fluid for responsive image -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock content %}
+{% block cert_filter %}
+    <script src="{% static 'js/filter.js' %}"></script>
+{% endblock %}

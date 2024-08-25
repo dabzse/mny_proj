@@ -1,0 +1,30 @@
+{% extends "devel/main.html" %}
+{% load static %}
+
+{% block aff_css %}    <link href="{% static 'css/affiliate.css' %}" rel="stylesheet" type="text/css">{% endblock aff_css %}
+
+{% block whoami %}
+    {% include 'devel/inc.whoami.html' %}
+{% endblock whoami %}
+
+{% block content %}
+
+<div class="album pt-2 pb-4 bg-light">
+    <h1 class="text-center text-danger pb-2">
+        By clicking on any link below: will go to another site!<br>
+        Every link will be opened in a new tab.<br>
+        Keep it in your mind: their website is using cookies.<br>
+        I'm not responsible for their cookies! (and for trackers if any)
+    </h1>
+    <div class="container d-flex pt-2">
+        <div class="row row-cols-1 row-cols-sm-2 g-3">
+
+            {% for card in cards %}
+                {{ card.render|safe }}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

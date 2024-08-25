@@ -1,0 +1,235 @@
+{% extends "devel/main.html" %}
+{% load static %}
+
+{% block cv_data %}
+
+<div id="cv" class="fade_main">
+    <div class="main_details">
+
+        <div id="headshot" class="quick_fade">
+            <img alt="Mihaly Nyilas" src="{% static 'images/mny.png' %}">
+        </div>
+
+        <div id="name">
+            <h1 class="quick_fade delay_two">Mihaly Nyilas</h1>
+            <h2 class="quick_fade delay_three">"IT intern"</h2>
+            <h2 class="quick_fade delay_three">"program designer"</h2>
+            <h2 class="quick_fade delay_three">"computer science"</h2>
+            <h2 class="quick_fade delay_three">"sw engineer seedling"</h2>
+        </div>
+
+        <div id="contact_details" class="quick_fade delay_four">
+            <h3>Some contact details</h3>
+            <ul>
+                <li>
+                    <a class="pt-3" href="mailto:dabzse.net+py__SMAP__TA__DETELE__EM__gmail.com">e-mail address</a>
+                </li>
+                <li><a href="http://dabzse.net" target="_blank">MY WEBSITE</a></li>
+                <li>phone number is not public!<br>please, respect it! (if you have it)</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>feel free to ask me: I will answer<br>there is my e-mail address</li>
+            </ul>
+            <a class="pt-3" href="https://dabzse.github.io" target="_blank">one portfolio on GitHub</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="quick_fade delay_five" id="area_main">
+        <section>
+            <article class="show_flex">
+                <div class="section_title">
+                    <h1>Some personal, important and useful information about me</h1>
+                </div>
+                <div class="section_content">
+<h3 class="personal">Security: one of the most important things not just in the IT sector, nor just in the digital world..., but everywhere!</h3>
+I am security, development-improvement and quality-oriented, who is good at logical tasks and helps his superiors, colleagues, team members/team.<br>
+I have more than 15 years of experience in repairing computers, I am interested in the software part, but I also did hardware works too.<br>
+After replacing the hardware, if it was necessary, I reached for the software part and got it to work.<br>
+It also happened more than once that important data was/were accidentally deleted from the HDD/USB. I brought it back. I also rescued what was still possible from a dead HDD/USB (if the USB is not "short-circuited"!). There were also cases where someone better than me couldn't cope with a problem for hours. He didn't believe that I would succeed. Not even in finding the source of the problem! Since I didn't know what he was looking at and what he wasn't looking at, I indicated the origin of the problem relatively quickly, within minutes.<br>Similar situations arose elsewhere, I won't go into detail because I don't remember them all. On&nbsp;the other hand, yes, that I can find it, make it, fix it, or give advice on what is worthwhile.<br>
+Most of all, I would like to validate this knowledge, in the long term, and make use of it by learning to program excellently.<br>
+However, I already have several years of machine handling and installation behind me.<br>
+Including machine settings, 3D camera settings (KEYENCE), QR/DMC code reader (KEYENCE).<br><hr><br>
+I follow ethical and professional standards during the execution of tasks.<br>
+I inform my supervisor about the information and progress related to the task entrusted to me on the requested regularity.<br><br>
+Others have said about me: I am too good at doing simple tasks. They are right!<br>
+I have a great, strong and deep understanding of even complex things. Maybe not right away, maybe I need some time and a little more practice to see things better, but I'm learning quickly and accurately! Some people think of this precise learning as "correction", <strong><em>YET IT'S NOT!</em></strong> Only, if a person learns something wrong, it takes a long time, sometimes years, to correct it in oneself.<br>
+<details><summary>I am able to work under pressure and within deadlines.</summary>
+<p>(my passion for <a href="http://dabzse.net/go.php?to=chessprofile" target="_blank" title="my chess.com account">CHESS</a> helps a lot in this; although I haven't played much in recent years... but the so-called blind-chess and simultaneous (only 2 opponents wanted to play) also worked; so I can pay attention to several sides, just don't disturb me. I have to practice it again, and then I can also talk about a third thing, even in another language)</p></details>
+Hardworking, motivated / self-motivated husband and family man.
+                </div>
+            </article>
+            <div class="clear"></div>
+        </section>
+
+        <hr>
+
+        <section>
+            <article class="show_flex">
+                <div class="section_title">
+                    <h1>Work Experience</h1>
+                </div>
+                <div class="section_content">
+                    <h2>Self Education</h2>
+                    <p class="sub_details">"Freelancer" and I did it while working somewhere else</p>
+                    <ul class="list-group list-group-flush">
+                        {% for item in self_education %}
+                            <li class="list-group-item">
+                                {% if item.sub_items %}
+                                    {{ item.text|safe }}
+                                    <ul class="list-group list-group-flush">
+                                        {% for sub_item in item.sub_items %}
+                                            <li class="list-group-item noborder">
+                                                {{ sub_item|safe }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    {{ item|safe }}
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <p><a href="http://dabzse.net/go.php?to=chessprofile" target="_blank" title="my chess.com account">my chess.com account</a> | <a href="http://dabzse.net/go.php?to=playchess" target="_blank" title="join chess.com">Would like to join chess.com? Create an account!</a></p>
+
+                    <hr>
+
+                    <h2>Computer Skills</h2>
+                    <p class="sub_details">I'm sure I have to update some knowledge, but if I'm working in it, it goes much faster and easier</p>
+                    <ul class="list-group list-group-flush">
+                        {% for item in computer_skills %}
+                            {% if item.text %}
+                                <li class="list-group-item">
+                                    {% if item.url %}
+                                        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.text|safe }}</a>
+                                    {% else %}
+                                        {{ item.text|safe }}
+                                    {% endif %}
+
+                                    {% if item.sub_items %}
+                                        <ul class="list-group list-group-flush">
+                                            {% for sub_item in item.sub_items %}
+                                                {% if sub_item.text %}
+                                                    <li class="list-group-item">
+                                                        {% if sub_item.url %}
+                                                            <a href="{{ sub_item.url }}" target="_blank" rel="noopener noreferrer">{{ sub_item.text|safe }}</a>
+                                                        {% else %}
+                                                            {{ sub_item.text|safe }}
+                                                        {% endif %}
+
+                                                        {% if sub_item.sub_items %}
+                                                            <ul class="list-group list-group-flush">
+                                                                {% for sub_sub_item in sub_item.sub_items %}
+                                                                    <li class="list-group-item">{{ sub_sub_item|safe|linebreaksbr }}</li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        {% endif %}
+                                                    </li>
+                                                {% else %}
+                                                    <li class="list-group-item">{{ sub_item|safe|linebreaksbr }}</li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% else %}
+                                <li class="list-group-item">{{ item|safe|linebreaksbr }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                <div class="clear"></div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section>
+            <article class="show_flex">
+                <div class="section_title">
+                    <h1>Skills, Abilities</h1>
+                </div>
+                <div class="section_content">
+                    <ul class="key_skills">
+                        {% for skill in abilities %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section>
+            <article class="show_flex">
+                <div class="section_title">
+                    <h1>Studies</h1>
+                </div>
+                <div class="section_content">
+                    <article class="show_flex">
+                        <h2>Eszterházy Károly Catholic University<br>2023 &mdash; 2026(?)</h2>
+                        <p class="sub_details font-extrabold">BSc in progress: Computer Science, Correspondence Training</p>
+                    </article>
+                    <article>
+                        <h2>Eszterházy Károly {Catholic} University<br>2020 &mdash; 2023</h2>
+                        <p class="sub_details font-extrabold">Final exam completed (June 19, 2023) : ASc Degree</p>
+                        <p class="sub_details">Training Name: Computer Science</p>
+                        <p class="sub_details">Level: Higher Education Vocational Training</p>
+                        <p>
+    It is based in Eger, but I was expanding the range of students at the Campus Jászberény.<br>
+    In adult education vocational training, Program Designer IT [Developer] specialization.<br><br>
+    During the studies its name has been changed.<br>
+                        </p>
+                        <ul class="list-group list-group-flush">
+                            {% for item in edu_studies %}
+                                <li class="list-group-item">
+                                    {% if item.text %}
+                                        <span class="bg-blue-300">{{ item.text }}</span>
+                                    {% else %}
+                                        {{ item }}
+                                    {% endif %}
+
+                                    {% if item.sub_items %}
+                                        <ul class="list-group list-group-flush">
+                                            {% for sub_item in item.sub_items %}
+                                                <li class="list-group-item">
+                                                    {% if sub_item.text %}
+                                                        {{ sub_item.text }}
+                                                        {% if sub_item.sub_items %}
+                                                            <ul class="list-group">
+                                                                {% for nested_item in sub_item.sub_items %}
+                                                                    <li class="list-group-item noborder">{{ nested_item }}</li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        {{ sub_item }}
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <br>just to mention a few things
+                        <br>we will have some subjects in the future from ASc as well, so it will be updated for ASc and BSc
+                    </article>
+                    <hr>
+                </div>
+                <div class="clear"></div>
+            </article>
+        </section>
+    </div>
+    <div id="footer">
+        Copyright &copy; <strong>@dabzse &mdash; <em>&#123;&#123; MNY &#125;&#125;</em> &mdash;</strong> 2021 &mdash; {% now "Y" %}
+    </div>
+</div>
+
+{% endblock cv_data %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title>MNY :: development</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="@dabzse, @mny">
+    <meta name="author" generator="DABZSE editor">
+
+    <link href="{% static 'images/favicon.ico' %}" rel="icon" type="image/x-icon">
+    <link href="{% static 'css/tailwind-2.2.19.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'bs-icons/font/bootstrap-icons.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+{% block cert_css %}
+
+{% endblock cert_css %}
+
+{% block aff_css %}
+
+{% endblock aff_css %}
+
+
+
+</head>
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+
+{% include 'devel/inc.navbar.html' %}
+
+{% block whoami %}
+
+{% endblock whoami %}
+
+<section class="py-1">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+
+{% block content %}
+
+{% endblock content %}
+
+
+{% block cv_data %}
+
+{% endblock cv_data %}
+
+        </div>
+    </div>
+</section>
+
+{% include 'devel/inc.privacy.html' %}
+
+</main>
+
+{% include 'devel/inc.footinfo.html' %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/at.js' %}"></script>
+
+{% block cert_filter %}
+
+{% endblock cert_filter %}
+</body>
+</html>
