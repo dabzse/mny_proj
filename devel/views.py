@@ -27,6 +27,7 @@ def cert(request, filter_by=None):
         'eth': 'Ethical Hacking',
         'web': 'Web related',
         'wd': 'WebDev, FullStack',
+        'sql': 'SQL related',
         'cj': 'C, CPP, C#, Java, Kotlin',
         'tux': 'Linux related',
         'cms': 'WordPress, Drupal',
