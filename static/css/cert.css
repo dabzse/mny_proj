@@ -45,6 +45,7 @@ body {
 
 .btn:hover {
     background-color: #e4e5f4;
+    color: #000;
 }
 
 .btn.active {

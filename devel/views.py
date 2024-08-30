@@ -26,6 +26,7 @@ def cert(request, filter_by=None):
         'git': 'Git related',
         'eth': 'Ethical Hacking',
         'web': 'Web related',
+        'net': 'Networking',
         'wd': 'WebDev, FullStack',
         'sql': 'SQL related',
         'cj': 'C, CPP, C#, Java, Kotlin',
@@ -33,7 +34,7 @@ def cert(request, filter_by=None):
         'cms': 'WordPress, Drupal',
         'other': 'Other',
         'dm': 'Digital Marketing, Google Analytics, SEO, Cryptocurrency',
-        'mso': 'MSOffice apps: Word, Excel, PowerPoint',
+        'mso': 'MSOffice apps: Word, Excel, PowerPoint; Google Office apps: Docs, Sheets, Slides',
     }
 
     learn_places = LearnPlace.objects.all()
