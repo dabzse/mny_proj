@@ -22,7 +22,7 @@
             Just need a more practice, for practice I need more time...
         </h2>
     </article>
-    <nav class="nav nav-pills flex-column flex-sm-row bg-primary" aria-label="Certificates">
+    <nav class="nav nav-pills flex-column flex-sm-row" aria-label="Certificates">
         <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if not filter_by or filter_by == 'all' %}active{% endif %}"
            href="{% url 'cert_all' %}">All: {{ all_count }}</a>
         <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'sl' %}active{% endif %}"

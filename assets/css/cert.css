@@ -53,6 +53,11 @@ body {
     color: #fff;
 }
 
+.nav-pills .nav-link.active {
+    background-color: #abcdef;
+    color: #000;
+}
+
 #filter_content {
     display: flex;
     flex-wrap: wrap;
