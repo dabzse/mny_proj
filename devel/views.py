@@ -34,7 +34,7 @@ def cert(request, filter_by=None):
         'cms': 'WordPress, Drupal',
         'other': 'Other',
         'dm': 'Digital Marketing, Google Analytics, SEO, Cryptocurrency',
-        'mso': 'MSOffice apps: Word, Excel, PowerPoint; Google Office apps: Docs, Sheets, Slides',
+        'mso': 'MSOffice apps: Word, Excel, PowerPoint; Google Office apps: Docs, Sheets, Slides, Forms',
     }
 
     learn_places = LearnPlace.objects.all()
