@@ -21,16 +21,17 @@ def cert(request, filter_by=None):
     }
 
     ud_tags = {
-        'py': 'PYthon related',
+        'py': 'PYthon related, Julia, R',
         'ai': 'AI related',
         'git': 'Git related',
         'eth': 'Ethical Hacking',
+        'secu': 'Security related',
         'web': 'Web related',
         'net': 'Networking',
         'wd': 'WebDev, FullStack',
         'sql': 'SQL related',
         'cj': 'C, CPP, C#, Java, Kotlin',
-        'tux': 'Linux related',
+        'tux': 'Linux related, bash, shell',
         'cms': 'WordPress, Drupal',
         'other': 'Other',
         'dm': 'Digital Marketing, Google Analytics, SEO, Cryptocurrency',
