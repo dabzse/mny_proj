@@ -30,7 +30,7 @@ def cert(request, filter_by=None):
         'net': 'Networking',
         'wd': 'WebDev, FullStack',
         'sql': 'SQL related',
-        'cj': 'C, CPP, C#, Java, Kotlin',
+        'cj': 'C, CPP, C#, Rust, Java, Kotlin',
         'tux': 'Linux related, bash, shell',
         'cms': 'WordPress, Drupal',
         'other': 'Other',
