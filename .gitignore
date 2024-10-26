@@ -6,3 +6,4 @@ Pipfile*
 settings_dev.py
 ._DATA
 .vscode
+static
