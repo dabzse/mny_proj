@@ -98,14 +98,16 @@ def get_edu_studies():
                 },
                 "[ASc]: Laravel 8 (+ SQLite)",
                 "[ASc]: VueJS 2",
-                "[ASc internship]: Angular with TypeScript and PrimeNG, and MongoDB",
+                "[ASc internship]: mobile app with Ionic + Angular with TypeScript and PrimeNG and MongoDB",
                 "[ASc]: RestAPI in PHP and MySQL|MariaDB",
                 "[ASc internship]: FastAPI, it was an expected diligence task"
             ]
         },
         "[ASc]: Python Language",
         "[ASc, BSc]: High-level programming language 1-2, C#",
-        "[ASc]: C# Language (including WCF, RestSharp)",
+        "[ASc]: C# Language (including WCF (WinForms), RestSharp)",
+        "[BSc]: Computer Graphics in C# (WinForms), but I made some other things in python as well",
+        "[BSc]: Functional Programming in Erlang",
         "[ASc]: Service-oriented architecture",
         "[ASc]: Network Knowledge (PacketTracer, Cisco)",
         "[ASc, BSc]: Data Structures and Algorithms",
