@@ -79,4 +79,12 @@ def get_contacts():
             custom_li_items = ['Signal', 'Telegram', 'Viber', 'WhatsApp']
         ),
 
+        # Matrix
+        Card(
+            custom_div_text = 'Matrix',
+            custom_h5_text = 'Decentralized and&nbsp;safe chat',
+            custom_p_text = '<img src="/static/images/qr_matrix.png" width="150" height="150" alt="QR code to Matrix chat">',
+            custom_li_items = []
+        ),
+
     ]
