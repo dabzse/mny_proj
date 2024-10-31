@@ -76,7 +76,7 @@ def get_contacts():
             custom_div_text = 'Phone number based APPS',
             custom_h5_text = 'Phone number based apps',
             custom_p_text = 'I\'m still thinking about it, will I use these or not; so, be patient!',
-            custom_li_items = ['Signal', 'Telegram', 'Viber', 'WhatsApp']
+            custom_li_items = ['Signal', 'Viber', 'WhatsApp']
         ),
 
         # Matrix
@@ -84,6 +84,14 @@ def get_contacts():
             custom_div_text = 'Matrix',
             custom_h5_text = 'Decentralized and&nbsp;safe chat',
             custom_p_text = '<img src="/static/images/qr_matrix.png" width="150" height="150" alt="QR code to Matrix chat">',
+            custom_li_items = []
+        ),
+
+        # Telegram
+        Card(
+            custom_div_text = 'Telegram',
+            custom_h5_text = 'Decentralized and&nbsp;safe chat',
+            custom_p_text = '<img src="/static/images/qr_telegram.jpg" width="150" height="150" alt="QR code to Telegram chat">',
             custom_li_items = []
         ),
 
