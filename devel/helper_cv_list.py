@@ -108,6 +108,7 @@ def get_edu_studies():
         "[ASc]: C# Language (including WCF (WinForms), RestSharp)",
         "[BSc]: Computer Graphics in C# (WinForms), but I made some other things in python as well",
         "[BSc]: Functional Programming in Erlang",
+        "[BSc]: Mobile Programming in Android Studio with Kotlin",
         "[ASc]: Service-oriented architecture",
         "[ASc]: Network Knowledge (PacketTracer, Cisco)",
         "[ASc, BSc]: Data Structures and Algorithms",
