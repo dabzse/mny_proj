@@ -38,6 +38,14 @@ def cert(request, filter_by=None):
         'mso': 'MSOffice apps: Word, Excel, PowerPoint; Google Office apps: Docs, Sheets, Slides, Forms',
     }
 
+    gmk_tags = {
+        'sw': 'Software | Programming | Cloud',
+        'ai': 'AI',
+        'sap': 'SAP',
+        'lm': 'Leadership | Management | Manufacturing',
+        'mso': 'MSOffice apps'
+    }
+
     learn_places = LearnPlace.objects.all()
 
     # Initialize the data structure
@@ -60,17 +68,25 @@ def cert(request, filter_by=None):
             certifications = Certification.objects.filter(learnt_from=2)
         elif filter_by == 'ud':
             certifications = Certification.objects.filter(learnt_from=3)
+        elif filter_by == 'hr':
+            certifications = Certification.objects.filter(learnt_from=4)
+        elif filter_by == 'gmk':
+            certifications = Certification.objects.filter(learnt_from=5)
 
     # Calculate counts
     sl_count = certifications_by_place.get('SoloLearn', []).count() if isinstance(certifications_by_place.get('SoloLearn'), QuerySet) else len(certifications_by_place.get('SoloLearn', []))
     gh_count = certifications_by_place.get('GrassHopper', []).count() if isinstance(certifications_by_place.get('GrassHopper'), QuerySet) else len(certifications_by_place.get('GrassHopper', []))
     ud_count = certifications_by_place.get('UDemy', []).count() if isinstance(certifications_by_place.get('UDemy'), QuerySet) else len(certifications_by_place.get('UDemy', []))
-    all_count = sl_count + gh_count + ud_count
+    hr_count = certifications_by_place.get('HackerRank', []).count() if isinstance(certifications_by_place.get('HackerRank'), QuerySet) else len(certifications_by_place.get('HackerRank', []))
+    gmk_count = certifications_by_place.get('GerillaMentorKlub', []).count() if isinstance(certifications_by_place.get('GerillaMentorKlub'), QuerySet) else len(certifications_by_place.get('GerillaMentorKlub', []))
+    all_count = sl_count + gh_count + ud_count + hr_count + gmk_count
 
     context = {
         'sl_count': sl_count,
         'gh_count': gh_count,
         'ud_count': ud_count,
+        'hr_count': hr_count,
+        'gmk_count': gmk_count,
         'all_count': all_count,
         'learn_places': learn_places,
         'certifications_by_place': certifications_by_place,
