@@ -95,4 +95,12 @@ def get_contacts():
             custom_li_items = []
         ),
 
+        # Mastodon
+        Card(
+            custom_div_text = 'Mastodon',
+            custom_h5_text = 'Decentralized and&nbsp;safe social network',
+            custom_p_text = '<img src="/static/images/qr_mastodon.png" width="150" height="150" alt="QR code to Mastodon">',
+            custom_li_items = []
+        ),
+
     ]
