@@ -31,6 +31,10 @@
            href="{% url 'cert_filter' 'gh' %}">GrassHopper: {{ gh_count }}</a>
         <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'ud' %}active{% endif %}"
            href="{% url 'cert_filter' 'ud' %}">UDemy: {{ ud_count }}</a>
+        <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'hr' %}active{% endif %}"
+           href="{% url 'cert_filter' 'hr' %}">HackerRank: {{ hr_count }}</a>
+        <a class="btn rounded-pill flex-sm-fill text-sm-center nav-link {% if filter_by == 'gmk' %}active{% endif %}"
+           href="{% url 'cert_filter' 'gmk' %}">GerillaMentorKlub: {{ gmk_count }}</a>
     </nav>
 
     {% if not filter_by or filter_by == 'all' %}
@@ -66,17 +70,24 @@
 
         {% else %}
             <h3>{{ learn_places|get_place_name:filter_by }} Certifications</h3>
-            {% if filter_by != 'gh' %}
+            {% if filter_by not in exclude_filters %}
             <div id="filter_content" class="btn-group" role="group">
                 <button type="button" class="btn btn-primary me-2 active" onclick="filter_selection('all')">All</button>
                 {% if filter_by == 'sl' %}
                     {% for key, label in sl_tags.items %}
                         <button type="button" class="btn btn-secondary me-2" onclick="filter_selection('{{ key }}')">{{ label }}</button>
                     {% endfor %}
+
                 {% elif filter_by == 'ud' %}
                     {% for key, label in ud_tags.items %}
                         <button type="button" class="btn btn-secondary me-2" onclick="filter_selection('{{ key }}')">{{ label }}</button>
                     {% endfor %}
+
+                {% elif filter_by == 'gmk' %}
+                    {% for key, label in gmk_tags.items %}
+                        <button type="button" class="btn btn-secondary me-2" onclick="filter_selection('{{ key }}')">{{ label }}</button>
+                    {% endfor %}
+
                 {% endif %}
             </div>
             {% endif %}

@@ -43,7 +43,7 @@ def cert(request, filter_by=None):
         'ai': 'AI',
         'sap': 'SAP',
         'lm': 'Leadership | Management | Manufacturing',
-        'mso': 'MSOffice apps'
+#        'mso': 'MSOffice apps',
     }
 
     learn_places = LearnPlace.objects.all()
@@ -94,6 +94,9 @@ def cert(request, filter_by=None):
         'filter_by': filter_by,
         'sl_tags': sl_tags,
         'ud_tags': ud_tags,
+        'gmk_tags': gmk_tags,
+
+        'exclude_filters': ['gh', 'hr'],
     }
 
     return render(request, "devel/cert.html", context)

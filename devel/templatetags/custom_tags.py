@@ -11,4 +11,8 @@ def get_place_name(learn_places, filter_by):
         return learn_places.get(id=2).name
     elif filter_by == 'ud':
         return learn_places.get(id=3).name
+    elif filter_by == 'hr':
+        return learn_places.get(id=4).name
+    elif filter_by == 'gmk':
+        return learn_places.get(id=5).name
     return "All"
