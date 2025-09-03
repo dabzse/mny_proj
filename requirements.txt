@@ -1,4 +1,4 @@
-Django>=4.2.23,<5.0.0
+Django>=4.2.24,<5.0.0
 asgiref>=3.8.1
 dj-database-url>=2.3.0
 gunicorn>=23.0.0
