@@ -43,8 +43,8 @@ def cert(request, filter_by=None):
         'ai': 'AI',
         'sap': 'SAP',
         'lm': 'Leadership | Management | Manufacturing',
-#        'mso': 'MSOffice apps',
         'cloud': 'Cloud',
+        'mso': 'MSOffice apps',
     }
 
     learn_places = LearnPlace.objects.all()
