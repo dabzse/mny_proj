@@ -39,12 +39,13 @@ def cert(request, filter_by=None):
     }
 
     gmk_tags = {
-        'sw': 'Software | Programming | Cloud',
+        'sw': 'Software | Programming | SQL',
         'ai': 'AI',
         'sap': 'SAP',
         'lm': 'Leadership | Management | Manufacturing',
         'cloud': 'Cloud',
         'mso': 'MSOffice apps',
+        'dsa': 'Data Science | Data Analysis',
     }
 
     learn_places = LearnPlace.objects.all()
